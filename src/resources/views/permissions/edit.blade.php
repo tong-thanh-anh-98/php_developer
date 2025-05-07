@@ -7,7 +7,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Permissions / Edit') }}
             </h2>
-            <a href="{{ route('permissions.edit', $permission->id) }}" class="bg-slate-700 text-sm rounded-md text-white px-3 py-2">
+            <a href="{{ route('permissions.list', $permission->id) }}" class="bg-slate-700 text-sm rounded-md text-white px-3 py-2">
                 Back
             </a>
         </div>

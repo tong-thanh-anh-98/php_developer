@@ -10,7 +10,7 @@ class PermissionController extends Controller
     public function index()
     {
         $permissions = Permission::orderBy('created_at', 'DESC')->paginate(20);
-        // dd($permissions);
+
         return view('permissions.list', compact('permissions'));
     }
 
@@ -46,5 +46,25 @@ class PermissionController extends Controller
         return redirect()->route('permissions.list')->with('success', 'Updated successfully!');
     }
 
-    public function destroy() {}
+    // public function destroy($id)
+    // {
+    //     $permission = Permission::findOrFail($id);
+    //     $permission->delete();
+
+    //     return redirect()->route('permissions.list')->with('success', 'Deleted successfully!');
+    // }
+
+    public function destroy($id)
+    {
+        $permission = Permission::find($id);
+        if ($permission == null) {
+            session()->flash('error', 'Data not found.');
+            return response()->json(['status' => false]);
+        }
+
+        $permission->delete();
+
+        session()->flash('success', 'Deleted successfully!');
+        return response()->json(['status' => true]);
+    }
 }
