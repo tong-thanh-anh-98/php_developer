@@ -19,19 +19,21 @@
                         <div>
                             <label for="" class="text-lg font-medium">Title</label>
                             <div class="my-3">
-                                <input value="{{ old('title') }}" name="title" type="text" class="border-gray-300 shadow-sm w-1/2 rounded-lg" placeholder="Enter title">
-                                <x-error-message field="title"/>
+                                <input value="{{ old('title') }}" name="title" type="text"
+                                    class="border-gray-300 shadow-sm w-1/2 rounded-lg" placeholder="Enter title">
+                                <x-error-message field="title" />
                             </div>
 
                             <label for="" class="text-lg font-medium">Content</label>
                             <div class="my-3">
-                                <textarea name="text" id="text" class="border-gray-300 shadow-sm w-1/2 rounded-lg" placeholder="Content">{{ old(key: 'text') }}</textarea>
+                                <textarea name="text" id="text" class="border-gray-300 shadow-sm w-1/2 rounded-lg" cols="30" rows="10" placeholder="Content">{{ old(key: 'text') }}</textarea>
                             </div>
 
                             <label for="" class="text-lg font-medium">Author</label>
                             <div class="my-3">
-                                <input value="{{ old('author') }}" name="author" type="text" class="border-gray-300 shadow-sm w-1/2 rounded-lg" placeholder="Enter author">
-                                <x-error-message field="author"/>
+                                <input value="{{ old('author') }}" name="author" type="text"
+                                    class="border-gray-300 shadow-sm w-1/2 rounded-lg" placeholder="Enter author">
+                                <x-error-message field="author" />
                             </div>
 
                             <button class="bg-slate-700 text-sm rounded-md text-white px-5 py-3">Submit</button>
